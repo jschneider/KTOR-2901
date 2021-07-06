@@ -29,7 +29,7 @@ import java.util.Date
 fun main() {
   println("Starting up the server")
 
-  embeddedServer(Netty, 8080, module = {
+  embeddedServer(Netty, 8081, module = {
     launch()
   }).start(wait = true)
 }
@@ -56,7 +56,7 @@ internal fun Application.launch() {
   }
 
   install(CORS) {
-    anyHost()
+    host("localhost:8080")
     header(HttpHeaders.Authorization)
 
     allowNonSimpleContentTypes = true

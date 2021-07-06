@@ -1,10 +1,10 @@
 ### Create a JWS token
-POST http://localhost:8080/auth
+POST http://localhost:8081/auth
 
 > {% client.global.set("auth_token", response.body); %}
 
 
 ### Test authentication
-GET http://localhost:8080/test
+GET http://localhost:8081/test
 Authorization: Bearer {{auth_token}}
 

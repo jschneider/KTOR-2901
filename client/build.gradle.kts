@@ -10,7 +10,6 @@ kotlin {
   js {
     browser {
       runTask {
-
       }
 
       commonWebpackConfig {
@@ -28,8 +27,10 @@ dependencies {
   implementation(Ktor.client.json)
   implementation(Ktor.client.serialization)
 
+  implementation(project(":common"))
+
   //React, React DOM + Wrappers (chapter 3)
-  implementation("org.jetbrains.kotlin-wrappers:kotlin-react:_")
+  //implementation("org.jetbrains.kotlin-wrappers:kotlin-react:_")
   //implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:_")
   //
   //implementation("org.jetbrains.kotlin-wrappers:kotlin-styled:_")
