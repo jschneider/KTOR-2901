@@ -46,16 +46,11 @@ internal fun Application.launch() {
       verifier(
         JWT
           .require(secretKey)
-          .withAudience("pv.neckar.it")
           .build()
       )
 
       validate { credential ->
-        if (credential.payload.audience.contains("pv.neckar.it")) {
-          JWTPrincipal(credential.payload)
-        } else {
-          null
-        }
+        JWTPrincipal(credential.payload)
       }
     }
   }
